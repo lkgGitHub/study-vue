@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>helloVue</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    {{msg}}
+    <div v-for="item in list">
+        <div v-show="item.age > 17" 
+            v-bind:style="styleMsg">
+            {{item.name}}
+        </div>
+
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el:"#app",
+        data: {
+            msg: "hello vue",
+            list:[{
+                name: "aaa",
+                age: 18
+            },{
+                name: "bbb",
+                age: 20
+            }],
+            styleMsg: {
+                color: "red"
+            }
+        }
+    })
+</script>
+</body>
+</html>
